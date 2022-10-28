@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Personal\\dESKTOP\\utsoelotttifelev\\.net_jatek\\CrushDepth\\CrushDepth.csproj": {}
+  },
+  "projects": {
+    "D:\\Personal\\dESKTOP\\utsoelotttifelev\\.net_jatek\\CrushDepth\\CrushDepth.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Personal\\dESKTOP\\utsoelotttifelev\\.net_jatek\\CrushDepth\\CrushDepth.csproj",
+        "projectName": "CrushDepth",
+        "projectPath": "D:\\Personal\\dESKTOP\\utsoelotttifelev\\.net_jatek\\CrushDepth\\CrushDepth.csproj",
+        "packagesPath": "C:\\Users\\Bombic\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal\\dESKTOP\\utsoelotttifelev\\.net_jatek\\CrushDepth\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bombic\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MonoGame.Content.Builder.Task": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            },
+            "MonoGame.Framework.WindowsDX": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

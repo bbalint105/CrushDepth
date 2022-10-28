@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/red_sub_tex.jpg</File>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/SF.spritefont</File>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/skyhalf.jpg</File>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeColor.jpg</File>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeHeight.png</File>
+    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/sub.fbx</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
