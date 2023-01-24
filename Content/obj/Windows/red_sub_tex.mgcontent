@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/red_sub_tex.jpg</SourceFile>
+  <SourceFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/red_sub_tex.jpg</SourceFile>
   <SourceTime>2022-03-13T09:37:40+01:00</SourceTime>
-  <DestFile>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bin/Windows/red_sub_tex.xnb</DestFile>
-  <DestTime>2022-10-26T17:12:52.4909761+02:00</DestTime>
+  <DestFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bin/Windows/red_sub_tex.xnb</DestFile>
+  <DestTime>2023-01-24T15:51:11.5366168+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

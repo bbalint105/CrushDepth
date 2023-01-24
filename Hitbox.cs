@@ -3,21 +3,19 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 
+
 namespace CrushDepth{
     delegate void onCollisionEvent(Hitbox hm);
 
     class Hitmap{
 
-        static List<Hitmap> hitmaps = new List<Hitmap>();
+        public static List<Hitmap> hitmaps = new List<Hitmap>();
 
-        public static void CollideAll(){
-            for (int i = hitmaps.Count-1; i >= 0; i--)
+        public static void CollideAll(Hitmap hb){
+            for (int j = hitmaps.Count-1; j >= 0; j--)
             {
-                for (int j = hitmaps.Count-1; j >= 0; j--)
-                {
-                    if(j!=i)
-                        hitmaps[j].Collide(hitmaps[i]);
-                }
+                    if(hitmaps[j] != hb)
+                        hitmaps[j].Collide(hb);
             }
         }
 
@@ -45,6 +43,19 @@ namespace CrushDepth{
                         if(i.Intersects(j)){
                             this.oncoll?.Invoke(j);
                             b.oncoll?.Invoke(i);
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool CollideB(Hitmap b){
+            foreach (Hitbox i in hitboxes){
+                foreach(Hitbox j in b.hitboxes){
+                    if(i != j && i != null && j != null){
+                        if(i.Intersects(j)){
+                            return true;
                         }
                     }
                 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/skyhalf.jpg</SourceFile>
-  <SourceTime>2022-10-26T13:04:44.6899153+02:00</SourceTime>
-  <DestFile>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bin/Windows/skyhalf.xnb</DestFile>
-  <DestTime>2022-10-26T17:12:52.6489447+02:00</DestTime>
+  <SourceFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/skyhalf.png</SourceFile>
+  <SourceTime>2023-01-23T21:20:42.39507+01:00</SourceTime>
+  <DestFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bin/Windows/skyhalf.xnb</DestFile>
+  <DestTime>2023-01-24T15:51:11.634651+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

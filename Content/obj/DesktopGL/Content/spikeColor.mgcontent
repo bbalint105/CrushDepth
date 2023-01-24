@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeColor.jpg</SourceFile>
-  <SourceTime>2022-10-26T17:13:32.5214614+02:00</SourceTime>
+  <SourceTime>2023-01-23T20:05:57.6298678+01:00</SourceTime>
   <DestFile>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bin/DesktopGL/Content/spikeColor.xnb</DestFile>
-  <DestTime>2022-10-28T02:39:41.6938243+02:00</DestTime>
+  <DestTime>2023-01-24T12:43:23.4877683+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

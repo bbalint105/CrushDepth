@@ -8,7 +8,7 @@ namespace CrushDepth{
         IndexBuffer indexBuffer;
         BasicEffect effect;
 
-        public Spikerocks( GraphicsDevice dev, Texture2D tex, Texture2D heightMapTex ){
+        public Spikerocks( GraphicsDevice dev, Texture2D tex, Texture2D heightMapTex, Boolean isCeil ){
             int w = heightMapTex.Width;
             int h = heightMapTex.Height;
             uint[ ] hm = new uint[ w * h ];
@@ -32,15 +32,20 @@ namespace CrushDepth{
             }
 
             foreach(Hitbox hb in hitmap.hitboxes){
-                                    //Matrix.CreateScale( 3200, 800, 3200 )* Matrix.CreateTranslation( -1600, -499, -1600 )
-                hb.acoords *= new Vector3(3200, 800, 3200);
-                hb.acoords += new Vector3(-1600, -499, -1600);
-                hb.coords *= new Vector3(3200, 800, 3200);
-                hb.coords += new Vector3(-1600, -499, -1600);
+                if (!isCeil){
+                    hb.acoords *= new Vector3(3200, 800, 3200);
+                    hb.acoords += new Vector3(-1600, -499, -1600);
+                    hb.coords *= new Vector3(3200, 800, 3200);
+                    hb.coords += new Vector3(-1600, -499, -1600);
+                }
+                else{
+                    hb.acoords *= new Vector3(3200, -800, 3200);
+                    hb.acoords += new Vector3(-1600, 301, -1600);
+                    hb.coords *= new Vector3(3200, -800, 3200);
+                    hb.coords += new Vector3(-1600, 301, -1600);
+                }
+
             }
-
-
-
 
 
             vertexBuffer = new VertexBuffer( dev, VertexPositionTexture.VertexDeclaration, vbData.Length,
@@ -48,6 +53,7 @@ namespace CrushDepth{
             vertexBuffer.SetData( vbData );
 
             var indices = new ushort[ ( h - 1 ) * ( w * 2 + 1 ) ];
+            var indicesr = new ushort[ ( h - 1 ) * ( w * 2 + 1 ) ];
             int idx = 0;
             int dir = 1;
             for ( int j = 1; j < w; j++ )
@@ -62,7 +68,18 @@ namespace CrushDepth{
                     dir = -dir;
                 }
             indexBuffer = new IndexBuffer( dev, typeof( ushort ), indices.Length, BufferUsage.WriteOnly );
-            indexBuffer.SetData( indices );
+            
+            int n = indices.Length;
+            for (int i = 0; i < n; i++) {
+                indicesr[n - 1 - i] = indices[i];
+            }
+
+            if(!isCeil)
+                indexBuffer.SetData(indices);
+
+            if(isCeil)
+                indexBuffer.SetData(indicesr);
+            
             effect = new BasicEffect( dev );
             effect.Texture = tex;
             effect.TextureEnabled = true;

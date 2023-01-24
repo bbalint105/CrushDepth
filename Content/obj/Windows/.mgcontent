@@ -4,14 +4,32 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/red_sub_tex.jpg</File>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/SF.spritefont</File>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/skyhalf.jpg</File>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeColor.jpg</File>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeHeight.png</File>
-    <File>d:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/sub.fbx</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/bgm.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/honk.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/metalpipe.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/motor.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/pickup.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/red_sub_tex.jpg</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/SF.spritefont</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/skyhalf.png</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/sonar.mp3</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeColor.jpg</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeColorSonar.jpg</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeHeight.png</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/spikeHeightc.png</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/sub.fbx</File>
+    <File>D:/Personal/dESKTOP/utsoelotttifelev/.net_jatek/CrushDepth/Content/subicon.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

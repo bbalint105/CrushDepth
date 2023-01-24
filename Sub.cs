@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework.Audio;
 
 namespace CrushDepth
 {
@@ -8,11 +10,25 @@ namespace CrushDepth
     {
         Model model;
         BasicEffect eff;
-        public bool ctrlW, ctrlS, ctrlA, ctrlD, ctrlX, ctrlY, ctrlQ, ctrlE;
+        public bool ctrlW, ctrlS, ctrlA, ctrlD, ctrlX, ctrlY, ctrlQ, ctrlE, ctrlSpace;
+
+
 
         public float ballast_level;
-        public Hitbox hitbox1;
+        public float health;
+        public float electricity;
+        public int score;
 
+        public List<Crystal> cargo = new List<Crystal>();
+
+        public SoundEffectInstance metalpipe;
+
+        public Boolean Sonar;
+        public Hitbox hitbox1;
+        public Hitbox hitbox2;
+        public Hitbox hitbox3;
+
+        int mult = 1;
 
         static Matrix modelOffset = Matrix.CreateTranslation(new Vector3(0, -5, -7));
 
@@ -32,7 +48,14 @@ namespace CrushDepth
             eff.Texture = tex;
             eff.TextureEnabled = true;
 
+            ballast_level = -70;
+            health = 200;
+            electricity = 200;
+
             hitbox1 = new Hitbox();
+            hitbox2 = new Hitbox();
+            hitbox3 = new Hitbox();
+
 
             hitmap.oncoll += (other) => OnCollision(other);
 
@@ -59,6 +82,8 @@ namespace CrushDepth
             GenerateFullyConnectedBody();
 
             hitmap.hitboxes.Add(hitbox1);
+            hitmap.hitboxes.Add(hitbox2);
+            hitmap.hitboxes.Add(hitbox3);
         }
 
         public void Draw(Camera cam)
@@ -118,40 +143,39 @@ namespace CrushDepth
                 verlets[i].AddSqFriction(u, 0.5f);
             }
 
-
+            
 
 
             if (ctrlW)
             {
-                verlets[6].Acc += d * 1600;
-                verlets[7].Acc += d * 1600;
-
+                verlets[6].Acc += d * 1600*mult;
+                verlets[7].Acc += d * 1600*mult;
 
                 // TODAO
-                verlets[11].Acc += u * 900;
+                verlets[11].Acc += u * 900*mult;
 
             }
             if (ctrlS)
             {
-                verlets[6].Acc -= d * 500;
-                verlets[7].Acc -= d * 500;
+                verlets[6].Acc -= d * 500*mult;
+                verlets[7].Acc -= d * 500*mult;
             }
             if (ctrlA)
             {
-                verlets[11].Acc += r * 200;
+                verlets[11].Acc += r * 200*mult;
 
             }
             if (ctrlD)
             {
-                verlets[11].Acc -= r * 200;
+                verlets[11].Acc -= r * 200*mult;
             }
             if (ctrlX)
             {
-                ballast_level += 1;
+                ballast_level += 1*mult;
             }
             if (ctrlY)
             {
-                ballast_level -= 1;
+                ballast_level -= 1*mult;
             }
         }
 
@@ -162,41 +186,51 @@ namespace CrushDepth
 
             Vector3 notnormal = (other.acoords + other.coords)/2;
             Verlet mini = verlets[14];
+
             for (int i = 0; i < verlets.Length; i++)
-                {
-                    if(((notnormal-verlets[i].Pos).Length()) < ((notnormal-mini.Pos).Length())){
-                        mini = verlets[i];
-                    }
-                }
-            Vector3 force = (Vector3.Normalize(mini.Pos-notnormal)*3f)*new Vector3(1,0.1f,1);
-            mini.Pos += force;
-
-
-            //verlets[14].Pos -= d*2;
+            {
+                mini = verlets[i];
+                mini.AddSqFriction(d, 2f);
+                Vector3 force = (Vector3.Normalize(mini.Velocity) + Vector3.Normalize(mini.Pos-notnormal)*mini.Velocity.Length())*0.005f;
+                mini.Pos += force;
+            }
+            if (mini.Velocity.Length() > 20){
+                health -= 0.5f;
+                metalpipe.Play();
+            }
+                
             ApplyConstraints();
-            // for (int i = 0; i < verlets.Length; i++)
-            //     {
-            //         verlets[i].Acc += -2000*d;
-            //         verlets[i].AddSqFriction(d, 1f);
-            //         verlets[i].AddSqFriction(r, 1f);
-            //         verlets[i].AddSqFriction(u, 1f);
-            //     }
         }
 
         public void Step()
         {
+            
+            if (ctrlSpace){
+                Sonar = true;
+                if (electricity > -200) electricity -= 0.375f;
+            }
+            else
+                Sonar = false;
 
-            hitbox1.coords = verlets[0].Pos;
-            hitbox1.acoords = verlets[7].Pos;
+            hitbox1.coords = verlets[8].Pos;
+            hitbox1.acoords = verlets[11].Pos;
+
+            hitbox2.coords = verlets[9].Pos;
+            hitbox2.acoords = verlets[10].Pos;
+
+            hitbox3.coords = verlets[12].Pos;
+            hitbox3.acoords = verlets[13].Pos;
 
             ApplyForces();
-            for (int i = 0; i < verlets.Length; i++)
+            for (int i = 0; i < verlets.Length; i++){
                 verlets[i].Step();
+            }
+                
+            ballast_level = ballast_level + (200 - health)/300;
+
             ApplyConstraints();
-            if (ballast_level > 200) ballast_level = 200;
-            if (ballast_level < -200) ballast_level = -200;
-
-
+            if (ballast_level > 200*mult) ballast_level = 200*mult;
+            if (ballast_level < -200*mult) ballast_level = -200*mult;
         }
 
 
